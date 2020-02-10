@@ -1,0 +1,38 @@
+{{> navigation}}
+<div class="container align-items-center">
+    <div class="row ">
+        <div class="span12">
+            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                <div class="input-append span12">
+                    <input type="text" class="search-query" placeholder="Search">
+                    <button type="submit" class="btn"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {{#each papelera}}
+        <div class="col-md-3">
+            <carta  id = {{id}}>
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{nombre}}</h5>
+
+                        <p class="card-text">Descripción:  {{descripcion}}</p>
+                        <p class="card-text">Creado: {{date}}</p>
+
+                        <a class="btn btn-danger"  href="/proyects/recycle-bin/delete/{{id}}">
+                            <i class="fas fa-trash-alt" >  </i>
+                        </a>
+                        <a class="btn btn-secondary" href="/proyects/recycle-bin/restore/{{id}}">
+                        Restaurar archivo
+                        </a>
+                    </div>
+                </div>
+            </carta>
+        </div>
+    {{/each}}
+</div>
+</div>

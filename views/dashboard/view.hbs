@@ -1,0 +1,86 @@
+{{> navigation}}
+
+<div class="row">
+
+    <div class="p-3 mb-2 bg-info text-white">
+        <a href="dashboard/new"> <button class="btn btn-primary">Añadir una nueva tarea</button> </a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-danger"><h2> Pendientes </h2> </div>
+        <div class="col bg-warning"><h2> En progreso </h2></div>
+        <div class="col bg-success"><h2> Completados </h2></div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col bg-danger">
+            <div class="row">
+                {{# each to_do }}
+                <carta>
+                    <div class="col-md-3">
+                        <div class="card-text center">
+                            <div class="card-body " style="background-color: {{color}}">
+                                <h5 class="card-title" >{{titulo}}</h5>
+                                <p class="card-text">Descripción:  {{descripcion}}</p>
+                                <a href="/dashboard/move_progress/{{id_Proyecto}}/{{estado}}/{{titulo}}"> <button class ="btn btn-secondary"><i class="fas fa-angle-double-right"></i> </button></a>
+                                <a href="/dashboard/delete/{{id_Proyecto}}/{{titulo}}/{{color}}"><button class="btn btn-danger" > <i class="fas fa-trash-alt" ></i> </button></a>
+                                <a href="/dashboard/edit/{{id_Proyecto}}/{{titulo}}/{{descripcion}}"><button class="btn btn-secondary" > <i class="fas fa-edit"></i> </button></a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </carta>
+            </div>
+
+        </div>
+        <div class="col bg-warning">
+            <div class="row">
+                {{# each progress }}
+                <carta>
+                    <div class="col-md-3">
+                        <div class="card-text center">
+                            <div class="card-body " style="background-color: {{color}}">
+                                <h5 class="card-title" >{{titulo}}</h5>
+                                <p class="card-text">Descripción:  {{descripcion}}</p>
+                                <div class="form-group">
+                                <a href="/dashboard/move_to_do/{{id_Proyecto}}/{{estado}}/{{titulo}}"> <button class ="btn btn-secondary" > <i class="fas fa-angle-double-left"></i> </button></a>
+                                <a href="/dashboard/move_done/{{id_Proyecto}}/{{estado}}/{{titulo}}"><button class ="btn btn-secondary" > <i class="fas fa-angle-double-right"></i> </button></a>
+                                    <a href="/dashboard/delete/{{id_Proyecto}}/{{titulo}}/{{color}}"><button class="btn btn-danger" > <i class="fas fa-trash-alt" ></i> </button></a>
+                                    <a href="/dashboard/edit/{{id_Proyecto}}/{{titulo}}/{{descripcion}}"><button class="btn btn-secondary" > <i class="fas fa-edit"></i> </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </carta>
+            </div>
+
+        </div>
+        <div class="col bg-success">
+            <div class="row">
+            {{# each done }}
+            <carta>
+                <div class="col-md-3">
+                    <div class="card-text center">
+                        <div class="card-body " style="background-color: {{color}}">
+                            <h5 class="card-title" >{{titulo}}</h5>
+                            <p class="card-text">Descripción:  {{descripcion}}</p>
+                            <a href="/dashboard/move_progress/{{id_Proyecto}}/{{estado}}/{{titulo}}"> <button class ="btn btn-secondary"><i class="fas fa-angle-double-left"></i> </button></a>
+                            <a href="/dashboard/delete/{{id_Proyecto}}/{{titulo}}/{{color}}"><button class="btn btn-danger" > <i class="fas fa-trash-alt" ></i> </button></a>
+                            <a href="/dashboard/edit/{{id_Proyecto}}/{{titulo}}/{{descripcion}}"><button class="btn btn-secondary" > <i class="fas fa-edit"></i> </button></a>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+            </carta>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

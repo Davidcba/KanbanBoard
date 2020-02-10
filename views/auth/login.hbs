@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height:100vh">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row justify-content-center" > Login Kanban-Board </div>
+                    <form   method="post" >
+                        <div class="form-group">
+                            <input type="email"
+                                   class="form-control"
+                                   name="email"
+                                   placeholder="email"
+                                   required
+                                   autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="password"
+                                   class="form-control"
+                                   name="password"
+                                   id = "password"
+                                   required
+                                   placeholder="Password">
+                        </div >
+                        <div class = "form-group">
+                            <button id="submit"
+                                    class="btn btn-primary btn-block"> Login </button>
+                        </div>
+                    </form>
+                    <div><button type="button"
+                                 class="btn btn-secondary"
+                                 value="Sing Up" onClick="window.location.href='/singup'"> Register </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

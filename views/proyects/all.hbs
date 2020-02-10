@@ -1,0 +1,48 @@
+{{> navigation}}
+
+
+
+<div class="container align-items-center">
+    <div class="row ">
+        <div class="span12">
+            <form method="get" id="custom-search-form" class="form-search form-horizontal pull-right">
+                <div class="input-append span12">
+                    <input type="text" class="search-query" placeholder="Search" name="buscar">
+                    <a> <button class="btn btn-primary"><i class="fas fa-search"></i></button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        {{#each proyectos}}
+            <div class="col-md-3">
+                <carta  id = {{id}}>
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{nombre}}</h5>
+
+                        <p class="card-text">Descripción:  {{descripcion}}</p>
+                        <p class="card-text">Creado: {{date}}</p>
+
+                        <a class="btn btn-danger"  href="proyects/delete/{{id}} " >
+                            <i class="fas fa-trash-alt" ></i>
+                        </a>
+                        <a class="btn btn-secondary" href="dashboard/{{id}}">
+                            Ver Tablero
+                        </a>
+                    </div>
+                </div>
+                </carta>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay proyectos creados Todavía</p>
+                    <a href="/proyects/new">Crear Uno!</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
